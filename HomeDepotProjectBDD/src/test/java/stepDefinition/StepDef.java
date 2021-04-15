@@ -16,6 +16,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 
@@ -39,12 +40,14 @@ public class StepDef extends BaseClassHomeDepot{
 		System.out.println(URL);
 		System.out.println(brow);
 		
-		
-		
 		if(brow.equals("chrome"))
 		{
 			System.setProperty("webdriver.chrome.driver",readconfig.getChromePath());
-			driver = new ChromeDriver();
+			ChromeOptions op = new ChromeOptions();
+			op.setHeadless(true);
+			op.addArguments("window-size=1920,1080");
+			driver = new ChromeDriver(op);
+			//driver = new ChromeDriver();
 		}
 		else if(brow.equals("IE")) 
 		{
