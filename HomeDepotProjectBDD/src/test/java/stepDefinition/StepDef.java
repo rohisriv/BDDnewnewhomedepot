@@ -108,11 +108,14 @@ public class StepDef extends BaseClassHomeDepot{
 	@Then("Verification page opens with heading {string}")
 	public void verification_page_opens_with_heading(String string) {
 	    
-		WebElement q = driver.findElement(By.xpath("//*[@id=\"single-signin__body\"]/div/div[1]/div/div/p"));
+		System.out.println("The Title of the current page is ... " + driver.getTitle());
+		Assert.assertEquals(driver.getTitle(),"The Home Depot");
+		
+		/*WebElement q = driver.findElement(By.xpath("//*[@id=\"single-signin__body\"]/div/div[1]/div/div/p"));
 		String qs = q.getText();
 		System.out.println(qs);
+	    Assert.assertEquals(qs, string);*/
 		
-		Assert.assertEquals(qs, string);
 		driver.quit();
 	}
 
