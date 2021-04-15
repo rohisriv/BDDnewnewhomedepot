@@ -11,7 +11,7 @@ import cucumber.api.junit.Cucumber;
 		glue="stepDefinition",
 		monochrome=true,
 		dryRun=false,
-		tags= {"@TC4,@TC3,@TC2,@TC1"},
+		tags= {"@TC4"},
 		plugin= {"pretty","html:test-output/Rohini_Report"}
 		)
 
